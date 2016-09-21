@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nRO-ac-rUb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Insta Collection View Controller-->
+        <scene sceneID="jyI-k8-8r0">
+            <objects>
+                <collectionViewController id="iLS-yH-XpR" customClass="InstaCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bna-7y-z0D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="KTX-eM-85w">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="instaCell" id="0EN-9Q-17A" customClass="InstaCollectionViewCell">
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w8I-3h-LAD"/>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="w8I-3h-LAD" secondAttribute="bottom" id="IPL-h3-BnQ"/>
+                                    <constraint firstItem="w8I-3h-LAD" firstAttribute="leading" secondItem="0EN-9Q-17A" secondAttribute="leading" id="RZJ-ZQ-yW2"/>
+                                    <constraint firstItem="w8I-3h-LAD" firstAttribute="top" secondItem="0EN-9Q-17A" secondAttribute="top" id="ZFR-cG-YmW"/>
+                                    <constraint firstAttribute="trailing" secondItem="w8I-3h-LAD" secondAttribute="trailing" id="xBT-C2-Wt6"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="w8I-3h-LAD" id="AdU-Mx-qNi"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="instaSection" id="DUk-h2-iGk" customClass="InstaCollectionReusableView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ER-0G-Bt2">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="6ER-0G-Bt2" firstAttribute="centerY" secondItem="DUk-h2-iGk" secondAttribute="centerY" id="9tZ-Db-mGy"/>
+                                <constraint firstItem="6ER-0G-Bt2" firstAttribute="centerX" secondItem="DUk-h2-iGk" secondAttribute="centerX" id="Oc7-d3-kO3"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleLabel" destination="6ER-0G-Bt2" id="KTP-2O-IP8"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="iLS-yH-XpR" id="BF3-ax-cQn"/>
+                            <outlet property="delegate" destination="iLS-yH-XpR" id="PZp-vq-GsH"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="aOw-Ag-ZdM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="Rih-3f-LCj">
+                            <connections>
+                                <action selector="playButtonAction:" destination="iLS-yH-XpR" id="Jyc-aJ-Rlf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xDj-rr-Flp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yF4-jG-nDT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nRO-ac-rUb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c1K-fo-38W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iLS-yH-XpR" kind="relationship" relationship="rootViewController" id="TGe-Pu-RA7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2L8-4O-VGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55.200000000000003" y="35.532233883058474"/>
+        </scene>
+    </scenes>
+</document>
